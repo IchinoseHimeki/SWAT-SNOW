@@ -471,7 +471,10 @@
       allocate (wcklsp(msub))
       allocate (welev(msub))
       allocate (wlat(msub))
-
+!! Add wlon, Acculat&lon 
+      allocate (wlon(msub))
+      allocate (acculat(msub))
+      allocate (acculon(msub))
       allocate (sub_pst(mpst,msub))
 
       allocate (huminc(msub,12))

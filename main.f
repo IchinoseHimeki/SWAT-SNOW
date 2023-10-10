@@ -54,6 +54,7 @@
      &          "               Rev. 690               ",/,             
      &          "      Soil & Water Assessment Tool    ",/,             
      &          "               PC Version             ",/,             
+     &          "        Modified on Oct 9 by JLU      ",/,             
      &          " Program reading from file.cio . . . executing",/)
      
 !! current working directory - for Chris G.

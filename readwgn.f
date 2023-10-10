@@ -73,6 +73,8 @@
 !!    wlat(:)     |degrees       |latitude of weather station used to compile
 !!                               |data
 !!    wndav(:,:) |m/s            |average wind speed for the month
+!!    acculat(:) |degrees        |Accurate latitude of Weather Station
+!!    acculon(:) |degrees        |Accurate longitude of Weather Station 
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 !!    ~ ~ ~ LOCAL DEFINITIONS ~ ~ ~
@@ -144,6 +146,7 @@
 
       read (114,5000) titldum
       read (114,5100) wlat(i)
+      read (114,5100) wlon(i)
       read (114,5100) welev(i)
       read (114,5100) rain_yrs
       read (114,5200) (tmpmx(mon,i),mon = 1,12)
@@ -160,7 +163,9 @@
       read (114,5200) (solarav(mon,i),mon = 1,12)
       read (114,5200) (dewpt(mon,i),mon = 1,12)
       read (114,5200) (wndav(mon,i),mon = 1,12)
-
+!! Add Acculat&lon      
+      acculat(i)=wlat(i)
+      acculon(i)=wlon(i)
 !! determine if input for dewpt is relative humidity
       do mon = 1,12
        if (dewpt(mon,i) > 1.0  .or. dewpt(mon,i) < 0.0) then

@@ -3,7 +3,7 @@
       real*8 :: prf_bsn
             
       type precip_pet_moving_average                  !!for tropical plant growth  
-        integer :: trop = 0                           !!      |1=tropical growth – moisture driven
+        integer :: trop = 0                           !!      |1=tropical growth ?moisture driven
         integer :: peren = 0                          !!      |0=annual crop; 1=perennial
         integer :: mce = 0                            !!      |my current element -day in the p/pet arrays 
         integer :: mon_seas = 0                       !!      |0=not monsoon season; 1=in monsoon
@@ -330,6 +330,8 @@
       real*8, dimension (:), allocatable :: wcklsp,sub_fr,sub_minp,sub_sw
       real*8, dimension (:), allocatable :: sub_sumfc,sub_gwno3,sub_gwsolp
       real*8, dimension (:), allocatable :: sub_km,sub_tc,wlat,sub_pet,co2
+!! Add wlon, Acculat&lon 
+      real*8, dimension (:), allocatable :: wlon,acculat,acculon
       real*8, dimension (:), allocatable :: welev,sub_orgn,sub_orgp,sub_bd
       real*8, dimension (:), allocatable :: sub_wtmp,sub_sedpa,sub_sedps
       real*8, dimension (:), allocatable :: sub_minpa,sub_minps,daylmn
