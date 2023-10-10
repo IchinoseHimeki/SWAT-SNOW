@@ -108,8 +108,8 @@
       sum =0.
       smp =0.
       isub = hru_sub(j)
-!! Output
-!!      open(unit=810, file='sub_sftmp_output.txt', status='unknown', action='write',POSITION='APPEND')
+!! Output, eats lots of IO and memory! UnComment the following line to debug
+!!      open(unit=810, file='sftmp_debug.txt', status='unknown', action='write',POSITION='APPEND')
       if (elevb(1,isub) > 0. .and. elevb_fr(1,isub) > 0.) then 
 !! elevation bands
         !! compute snow fall and melt for each elevation band
@@ -229,6 +229,7 @@
           snomlt = 0.
         end if
       end if
+      !!UnComment following line to debug files! Linked with L112.
       !!write(810, *) 'sub_sftmp(', ib, ',', isub, ') = ', sub_sftmp(ib,isub)
       !!write(810, *) 'acculon(', isub, ') = ', acculon(isub)
       !!write(810, *) 'acculat(', isub, ') = ', acculat(isub)
